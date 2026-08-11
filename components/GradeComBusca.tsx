@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { Search } from 'lucide-react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Search } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import { CardFerramenta } from '@/components/CardFerramenta'
-import { CLASSES_DA_GRADE } from '@/components/GradeFerramentas'
-import { Input } from '@/components/ui/input'
-import { filtrar } from '@/lib/busca'
-import type { Ferramenta } from '@/lib/ferramentas'
-import { ehEntradaDeTexto } from '@/lib/keyboard'
+import { CardFerramenta } from "@/components/CardFerramenta";
+import { CLASSES_DA_GRADE } from "@/components/GradeFerramentas";
+import { Input } from "@/components/ui/input";
+import { filtrar } from "@/lib/busca";
+import type { Ferramenta } from "@/lib/ferramentas";
+import { ehEntradaDeTexto } from "@/lib/keyboard";
 
 /**
  * §5.4 — a grade com busca.
@@ -19,24 +19,33 @@ import { ehEntradaDeTexto } from '@/lib/keyboard'
  * campo é mobília: a pessoa lê as ferramentas mais rápido do que digita.
  */
 export function GradeComBusca({ ferramentas }: { ferramentas: Ferramenta[] }) {
-  const [termo, definirTermo] = useState('')
-  const campo = useRef<HTMLInputElement>(null)
+  const [termo, definirTermo] = useState("");
+  const campo = useRef<HTMLInputElement>(null);
 
-  const encontradas = useMemo(() => filtrar(ferramentas, termo), [ferramentas, termo])
+  const encontradas = useMemo(
+    () => filtrar(ferramentas, termo),
+    [ferramentas, termo],
+  );
 
   // §5.5 — `/` foca a busca, desde que o foco não esteja num campo de texto.
   useEffect(() => {
     function aoTeclar(evento: KeyboardEvent) {
-      if (evento.key !== '/' || evento.ctrlKey || evento.metaKey || evento.altKey) return
-      if (ehEntradaDeTexto(evento.target)) return
+      if (
+        evento.key !== "/" ||
+        evento.ctrlKey ||
+        evento.metaKey ||
+        evento.altKey
+      )
+        return;
+      if (ehEntradaDeTexto(evento.target)) return;
 
-      evento.preventDefault()
-      campo.current?.focus()
+      evento.preventDefault();
+      campo.current?.focus();
     }
 
-    document.addEventListener('keydown', aoTeclar)
-    return () => document.removeEventListener('keydown', aoTeclar)
-  }, [])
+    document.addEventListener("keydown", aoTeclar);
+    return () => document.removeEventListener("keydown", aoTeclar);
+  }, []);
 
   return (
     <div>
@@ -65,21 +74,10 @@ export function GradeComBusca({ ferramentas }: { ferramentas: Ferramenta[] }) {
           ))}
         </ul>
       ) : (
-        /**
-         * §5.4 — nada de resultado vazio mudo. O link leva ao formulário já com
-         * o texto preenchido, para que a busca frustrada vire um pedido em vez
-         * de virar desistência.
-         */
         <p className="rounded-[10px] border border-cinza-200 bg-white p-6 text-sm text-cinza-500">
-          Nenhuma ferramenta com «{termo}».{' '}
-          <a
-            href={`?assunto=${encodeURIComponent(termo)}#solicitar`}
-            className="font-medium text-brand-700 underline underline-offset-4"
-          >
-            Pede pelo formulário abaixo?
-          </a>
+          Nenhuma ferramenta com «{termo}».
         </p>
       )}
     </div>
-  )
+  );
 }

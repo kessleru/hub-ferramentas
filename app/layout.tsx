@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { headers } from 'next/headers'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { headers } from "next/headers";
+import "./globals.css";
 
 /**
  * §3.2 — Inter por `next/font`: auto-hospedada, sem *layout shift* e sem CDN
@@ -9,10 +9,10 @@ import './globals.css'
  * o `globals.css` é quem monta a pilha de fontes, num lugar só.
  */
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
-})
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 /**
  * §9.1 — o hub existe para ser colado em conversa, então o *preview* faz parte
@@ -26,23 +26,22 @@ const inter = Inter({
  */
 const enderecoDoSite = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'http://localhost:3000'
+  : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(enderecoDoSite),
-  title: 'Ferramentas',
-  description:
-    'Conjunto de ferramentas utilitárias internas, num endereço só. ' +
-    'Gerador de certificados, visualizador de documentos e o formulário para pedir o que falta.',
+  title: "Ferramentas",
+  description: "Conjunto de ferramentas utilitárias internas, num endereço só.",
   openGraph: {
-    title: 'Ferramentas',
-    description: 'Conjunto de ferramentas utilitárias internas, num endereço só.',
-    type: 'website',
-    locale: 'pt_BR',
+    title: "Ferramentas",
+    description:
+      "Conjunto de ferramentas utilitárias internas, num endereço só.",
+    type: "website",
+    locale: "pt_BR",
   },
-}
+};
 
-export default async function RootLayout({ children }: LayoutProps<'/'>) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
   /**
    * §8.1 — **o preço do nonce, e ele é maior do que a especificação previa.**
    *
@@ -60,11 +59,11 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
    * A alternativa era `'unsafe-inline'`, que o §8.1 recusa por anular a
    * proteção. Entre as duas, a especificação já escolheu: "Faça o nonce."
    */
-  await headers()
+  await headers();
 
   return (
     <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
-  )
+  );
 }
