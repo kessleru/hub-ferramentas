@@ -1,0 +1,16 @@
+<!--
+  Gerador de Certificados — favicon da família.
+  Regras e conferência: PADRAO-FAVICON.md (§3.2).
+
+  Uma folha com selo no canto. O disco de fora é da cor da moldura de propósito:
+  ele abre o vão entre a folha e o selo, sem o qual as duas formas encostam e
+  viram uma mancha só em 16px.
+
+  Vai em `public/icon.svg`, com o <link> do §4.2 no index.html.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#1d4ed8" />
+  <rect x="7" y="5.5" width="14" height="19" rx="3" fill="#ffffff" />
+  <circle cx="22" cy="22" r="5.4" fill="#1d4ed8" />
+  <circle cx="22" cy="22" r="3.6" fill="#ffffff" />
+</svg>

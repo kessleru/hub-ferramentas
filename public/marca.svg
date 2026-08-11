@@ -1,0 +1,21 @@
+<!--
+  §5.1 — a marca do cabeçalho, em 32px.
+
+  Mesmo desenho do favicon (`app/icon.svg`), pelas regras do PADRAO-FAVICON.md
+  (§3.1): um nó central ligado a três. Os dois arquivos trocam juntos.
+
+  MARCADOR DE LUGAR: quando a marca da instituição existir em arquivo, ela
+  substitui este desenho nos dois lugares (PADRAO-FAVICON.md §9).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Marca">
+  <rect width="32" height="32" rx="8" fill="#1d4ed8" />
+  <g stroke="#ffffff" stroke-width="2.8" stroke-linecap="round">
+    <line x1="16" y1="16" x2="16" y2="8.5" />
+    <line x1="16" y1="16" x2="22.6" y2="20" />
+    <line x1="16" y1="16" x2="9.4" y2="20" />
+  </g>
+  <circle cx="16" cy="16" r="4.2" fill="#ffffff" />
+  <circle cx="16" cy="7.6" r="3.3" fill="#ffffff" />
+  <circle cx="23.3" cy="20.4" r="3.3" fill="#ffffff" />
+  <circle cx="8.7" cy="20.4" r="3.3" fill="#ffffff" />
+</svg>

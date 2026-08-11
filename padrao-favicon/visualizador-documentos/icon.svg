@@ -1,0 +1,15 @@
+<!--
+  Visualizador de Documentos — favicon da família.
+  Regras e conferência: PADRAO-FAVICON.md (§3.3).
+
+  Duas folhas empilhadas e deslocadas — "vários .docx de uma vez". A folha de
+  trás usa opacity em vez de um azul claro fixo: assim ela acompanha sozinha a
+  cor da moldura se o `brand-700` mudar.
+
+  Vai em `public/icon.svg`, com o <link> do §4.2 no index.html.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#1d4ed8" />
+  <rect x="14" y="5" width="12" height="17" rx="2.8" fill="#ffffff" opacity="0.5" />
+  <rect x="6" y="10" width="12" height="17" rx="2.8" fill="#ffffff" />
+</svg>

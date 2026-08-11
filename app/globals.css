@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* =============================================================================
+   §9 — Tokens da família.
+   Os tokens abaixo devem ser COLADOS do `src/index.css` do gerador de
+   certificados, sem alteração. Hex solto não entra em componente nenhum: tudo
+   passa por aqui.
+
+   ATENÇÃO: os valores atuais são um marcador de lugar. O repositório do gerador
+   não estava disponível quando este arquivo foi escrito; substitua o bloco
+   `:root` inteiro pelo de lá antes de considerar o §9 cumprido. Nada fora deste
+   bloco precisa mudar junto — o resto do arquivo só dá nome a estes valores.
+   ========================================================================== */
+
+:root {
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+
+  --cinza-50: #f8fafc;
+  --cinza-100: #f1f5f9;
+  --cinza-200: #e2e8f0;
+  --cinza-300: #cbd5e1;
+  --cinza-400: #94a3b8;
+  --cinza-500: #64748b;
+  --cinza-600: #475569;
+  --cinza-700: #334155;
+  --cinza-800: #1e293b;
+  --cinza-900: #0f172a;
+
+  --sucesso: #15803d;
+  --sucesso-50: #f0fdf4;
+  --aviso: #b45309;
+  --aviso-50: #fffbeb;
+  --erro: #b91c1c;
+  --erro-50: #fef2f2;
+
+  /* Inter, auto-hospedada por next/font (§3.2). CDN continua proibido (§8). */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* §5.3 — raio de 10px no card; os demais degraus saem daqui. */
+  --radius: 0.625rem;
+}
+
+/* -----------------------------------------------------------------------------
+   Os nomes semânticos que o shadcn/ui usa, apontando para os tokens acima.
+   É isto que faz um `<Button>` de fábrica já sair na paleta da família.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --background: var(--cinza-50); /* §9 — fundo cinza-50 */
+  --foreground: var(--cinza-900);
+  --card: #ffffff; /* §9 — cards brancos */
+  --card-foreground: var(--cinza-900);
+  --popover: #ffffff;
+  --popover-foreground: var(--cinza-900);
+  --primary: var(--brand-600); /* §9 — o único azul: "Enviar solicitação" */
+  --primary-foreground: #ffffff;
+  --secondary: var(--cinza-100);
+  --secondary-foreground: var(--cinza-900);
+  --muted: var(--cinza-100);
+  --muted-foreground: var(--cinza-500);
+  --accent: var(--brand-50);
+  --accent-foreground: var(--brand-700);
+  --destructive: var(--erro);
+  --border: var(--cinza-200); /* §9 — borda de 1px cinza-200 */
+  --input: var(--cinza-200);
+  --ring: var(--brand-500);
+}
+
+@theme inline {
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  --color-cinza-50: var(--cinza-50);
+  --color-cinza-100: var(--cinza-100);
+  --color-cinza-200: var(--cinza-200);
+  --color-cinza-300: var(--cinza-300);
+  --color-cinza-400: var(--cinza-400);
+  --color-cinza-500: var(--cinza-500);
+  --color-cinza-600: var(--cinza-600);
+  --color-cinza-700: var(--cinza-700);
+  --color-cinza-800: var(--cinza-800);
+  --color-cinza-900: var(--cinza-900);
+
+  --color-sucesso: var(--sucesso);
+  --color-sucesso-50: var(--sucesso-50);
+  --color-aviso: var(--aviso);
+  --color-aviso-50: var(--aviso-50);
+  --color-erro: var(--erro);
+  --color-erro-50: var(--erro-50);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/* §12 — tema escuro está fora de escopo nos três projetos. Não existe bloco
+   `.dark` aqui de propósito: um segundo conjunto de valores que ninguém olha
+   envelhece errado. Os tokens já são variáveis, então acrescentá-lo depois é
+   escrever um bloco, não refazer os componentes. */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* §9 — a régua de movimento dos irmãos: 4–12px, 150–260ms, uma curva só.
+   `prefers-reduced-motion` desliga tudo. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
