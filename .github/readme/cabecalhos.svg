@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="582" height="250" viewBox="0 0 582 250" role="img" aria-label="curl -sI localhost:3000">
+  <rect width="582" height="250" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <path d="M0 10a10 10 0 0 1 10-10h562a10 10 0 0 1 10 10v24H0z" fill="#161b22"/>
+  <line x1="0" y1="34" x2="582" y2="34" stroke="#30363d"/>
+  <circle cx="18" cy="17" r="5" fill="#ff5f57"/>
+  <circle cx="36" cy="17" r="5" fill="#febc2e"/>
+  <circle cx="54" cy="17" r="5" fill="#28c840"/>
+  <text x="320" y="22" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="12" fill="#7d8590">curl -sI localhost:3000</text>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="13" fill="#c9d1d9">
+    <text x="18" y="66" xml:space="preserve"><tspan fill="#7ee787">HTTP/1.1 200 OK</tspan></text>
+    <text x="18" y="86" xml:space="preserve"><tspan fill="#d2a8ff">X-Content-Type-Options</tspan><tspan>: nosniff</tspan></text>
+    <text x="18" y="106" xml:space="preserve"><tspan fill="#d2a8ff">Referrer-Policy</tspan><tspan>: no-referrer</tspan></text>
+    <text x="18" y="126" xml:space="preserve"><tspan fill="#d2a8ff">content-security-policy</tspan><tspan>:</tspan></text>
+    <text x="18" y="146" xml:space="preserve"><tspan>  default-src 'self';</tspan></text>
+    <text x="18" y="166" xml:space="preserve"><tspan>  script-src 'self' </tspan><tspan fill="#f2cc60">'nonce-NTk0NjdmMzYtNDU3NS00NGI5LTgy…'</tspan><tspan> 'strict-dynamic';</tspan></text>
+    <text x="18" y="186" xml:space="preserve"><tspan>  style-src 'self' 'unsafe-inline'; img-src 'self' data:;</tspan></text>
+    <text x="18" y="206" xml:space="preserve"><tspan>  font-src 'self'; connect-src 'self'; form-action 'self';</tspan></text>
+    <text x="18" y="226" xml:space="preserve"><tspan>  </tspan><tspan fill="#a5d6ff">frame-ancestors 'none'</tspan><tspan>; object-src 'none'; base-uri 'none'</tspan></text>
+  </g>
+</svg>
